@@ -38,7 +38,7 @@ ivan@shell:~$ cat perfil.txt
 
 ---
 
-## ![](https://img.shields.io/badge/02-1affe4?style=flat-square&labelColor=111111) CONOCIMIENTOS
+## `02 //` CONOCIMIENTOS
 
 | Área | Stack |
 |---|---|
@@ -49,10 +49,10 @@ ivan@shell:~$ cat perfil.txt
 
 ---
 
-## ![](https://img.shields.io/badge/03-1affe4?style=flat-square&labelColor=111111) PROYECTOS
+## `03 //` PROYECTOS
 
 <details>
-<summary><img src="https://img.shields.io/badge/EN_PRODUCCIÓN-1affe4?style=flat-square&labelColor=111111" alt="EN PRODUCCIÓN"> &nbsp; <strong>03.01 · CRONÓMETRO DE PLENOS</strong> &nbsp;·&nbsp; Python · Ayuntamiento de Espartinas</summary>
+<summary><code>EN PRODUCCIÓN</code> &nbsp; <strong>03.01 · CRONÓMETRO DE PLENOS</strong> · Python · Ayuntamiento de Espartinas</summary>
 
 ```
 ┌─[ pleno · 25.04.2025 ]──────────────────────┐
@@ -70,7 +70,7 @@ Cronómetros independientes por grupo político, avisos visuales y registro auto
 </details>
 
 <details>
-<summary><img src="https://img.shields.io/badge/DESPLEGADO-1affe4?style=flat-square&labelColor=111111" alt="DESPLEGADO"> &nbsp; <strong>03.02 · WEBSOCKET POLICÍA LOCAL</strong> &nbsp;·&nbsp; Python · Ayuntamiento de Espartinas</summary>
+<summary><code>DESPLEGADO</code> &nbsp; <strong>03.02 · WEBSOCKET POLICÍA LOCAL</strong> · Python · Ayuntamiento de Espartinas</summary>
 
 ```
 [ws] 192.168.1.14  ▸  CONNECTED   token=ok
@@ -86,7 +86,7 @@ Servicio **WebSocket** que consume datos en formato JSON desde una base de datos
 </details>
 
 <details>
-<summary><img src="https://img.shields.io/badge/ENTREGADO-22c55e?style=flat-square&labelColor=111111" alt="ENTREGADO"> &nbsp; <strong>03.03 · APP ANDROID · PATRULLA</strong> &nbsp;·&nbsp; Kotlin · Ayuntamiento de Espartinas</summary>
+<summary><code>ENTREGADO</code> &nbsp; <strong>03.03 · APP ANDROID · PATRULLA</strong> · Kotlin · Ayuntamiento de Espartinas</summary>
 
 ```
 ▸ INCIDENCIA #4172   ▲ MEDIA       14:02
@@ -103,7 +103,7 @@ App móvil en **Kotlin** que se conecta al servicio WebSocket para visualizar in
 </details>
 
 <details>
-<summary><img src="https://img.shields.io/badge/HOME_LAB-a855f7?style=flat-square&labelColor=111111" alt="HOME LAB"> &nbsp; <strong>03.04 · SOC LAB · WAZUH + ELK</strong> &nbsp;·&nbsp; Ciberseguridad · Máster EUSA</summary>
+<summary><code>HOME LAB</code> &nbsp; <strong>03.04 · SOC LAB · WAZUH + ELK</strong> · Ciberseguridad · Máster EUSA</summary>
 
 ```
 agents online      4 / 4    ✓
@@ -121,7 +121,7 @@ Bastionado Linux con CIS Benchmarks, fail2ban, nftables y políticas Zero Trust 
 
 ---
 
-## ![](https://img.shields.io/badge/04-1affe4?style=flat-square&labelColor=111111) FORMACIÓN
+## `04 //` FORMACIÓN
 
 ```
 2025 ─── 2026  ██  Máster FP en Ciberseguridad
@@ -142,7 +142,7 @@ Bastionado Linux con CIS Benchmarks, fail2ban, nftables y políticas Zero Trust 
 
 ---
 
-## ![](https://img.shields.io/badge/05-1affe4?style=flat-square&labelColor=111111) CONTACTO
+## `05 //` CONTACTO
 
 ```
 ivan@shell:~$ ./contacto.sh
@@ -159,7 +159,7 @@ Cualquier canal vale — correo, teléfono o LinkedIn.
 
 ---
 
-## ![](https://img.shields.io/badge/%2F%2F-1affe4?style=flat-square&labelColor=111111) ESTE REPOSITORIO
+## `//` ESTE REPOSITORIO
 
 ```
 Portfolio/
