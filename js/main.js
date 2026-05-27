@@ -1,9 +1,30 @@
-/* ============================================================
-   PROJECT REPO LINKS
-   Pega aquí las URLs de GitHub de cada proyecto.
-   Si dejas un valor vacío "" o null la tarjeta NO será clickable
-   (el badge se queda atenuado).
-   ============================================================ */
+/* ══════════════════════════════════════════════════════════════════
+   ██  main.js
+   ██  Portfolio · Iván Batista Herrero · Analista SOC L1
+   ══════════════════════════════════════════════════════════════════
+   Controla toda la interactividad del portfolio:
+     § 01 · Repositorios de proyecto → badges de GitHub
+     § 02 · Tarjetas de proyecto enlazadas a repos
+     § 03 · Terminal typing — efecto escritura en el hero
+     § 04 · Matrix rain — scramble de caracteres en About
+     § 05 · Tarjeta 3D holográfica — tilt + giroscopio
+     § 06 · Proyector holográfico — animación FLIP con portal DOM
+     § 07 · Grid hexagonal de habilidades — generado dinámicamente
+     § 08 · VanillaTilt — perspectiva 3D en tarjetas
+     § 09 · Portapapeles + descarga de CV
+     § 10 · Tarjetas de comunicación — botones de copia
+     § 11 · Reveal on scroll — IntersectionObserver por sección
+     § 12 · Progreso lateral — navegación por puntos
+     § 13 · Burbujas flotantes — canvas con física e iluminación
+     § 14 · Globo de red — Three.js con satélites y arcos de datos
+     § 15 · Status cycler — indicador de disponibilidad en footer
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════════════════════
+   § 01 · REPOSITORIOS DE PROYECTOS
+   Mapa clave → URL de GitHub para cada tarjeta de proyecto.
+   Rellena o deja vacío ("") para activar o desactivar el badge.
+   ══════════════════════════════════════════════════════════════════ */
 const PROJECT_REPOS = {
   cronometro: "https://github.com/1van106",   // 03.01 · CRONÓMETRO DE PLENOS
   websocket:  "https://github.com/1van106",   // 03.02 · WEBSOCKET POLICÍA LOCAL
@@ -11,7 +32,12 @@ const PROJECT_REPOS = {
   soclab:     "https://github.com/1van106"    // 03.04 · SOC LAB · WAZUH + ELK
 };
 
-/* ============ HOOK PROJECT CARDS TO GITHUB REPOS ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 02 · TARJETAS DE PROYECTO → GITHUB
+   Inyecta el badge git en .proj-meta y hace la tarjeta entera
+   clickable si la clave tiene URL en PROJECT_REPOS.
+   Tarjetas sin URL permanecen visibles pero no son interactivas.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const cards = document.querySelectorAll('.proj-card[data-repo-key]');
   cards.forEach(card => {
@@ -64,7 +90,12 @@ const PROJECT_REPOS = {
   });
 })();
 
-/* ============ TERMINAL TYPING (hero command) ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 03 · TERMINAL TYPING — prompt del hero
+   Escribe y borra líneas de comando en un loop infinito.
+   Velocidad variable en el tipeo (70-130ms) para simular escritura real;
+   borrado más rápido (35ms) para que el ciclo se sienta natural.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const target = document.getElementById('termCmd');
   if (!target) return;
@@ -89,7 +120,14 @@ const PROJECT_REPOS = {
   setTimeout(tick, 400);
 })();
 
-/* ============ MATRIX RAIN ON ABOUT TEXT (briefly) ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 04 · MATRIX RAIN — sección About
+   Al entrar en viewport, reemplaza cada carácter por símbolos aleatorios
+   y los restaura uno a uno con delay escalonado.
+   Tokeniza por palabras (spans.word con white-space:nowrap) para que
+   los saltos de línea solo ocurran entre palabras, no a mitad de un
+   carácter scrambleado.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const blocks = document.querySelectorAll('[data-matrix]');
   const CHARS = '01░▒▓<>{}[]/$#@&*+';
@@ -158,7 +196,13 @@ const PROJECT_REPOS = {
   blocks.forEach(b => io.observe(b));
 })();
 
-/* ============ 3D ID CARD — idle auto-swing + hover tilt ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 05 · TARJETA 3D — ID holográfica
+   Balanceo idle suave por seno + tilt interactivo al hover.
+   --ry y --rx son CSS vars leídas por el transform de la tarjeta,
+   --mx/--my posicionan el brillo holográfico siguiendo el cursor.
+   En móvil (hover:none) usa DeviceOrientation en lugar del ratón.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const card = document.getElementById('idCard3D');
   if (!card) return;
@@ -259,7 +303,15 @@ const PROJECT_REPOS = {
   io.observe(card);
 })();
 
-/* ============ HOLOGRAM PROJECTOR — FLIP puck-to-base + overlay ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 06 · PROYECTOR HOLOGRÁFICO — animación FLIP
+   El "puck" (base del proyector) se porta al <body> al abrirse,
+   porque position:fixed queda atrapado en ancestors con transform.
+   Al abrir: se miden los rects origen/destino → se pasan como CSS
+   vars → las transiciones CSS hacen el vuelo FLIP automáticamente.
+   Al cerrar: primero apaga el holograma (PHASE 1), luego devuelve
+   el puck a su posición en el flujo del DOM (PHASE 2).
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const root    = document.getElementById('idProjector');
   if (!root) return;
@@ -433,7 +485,12 @@ const PROJECT_REPOS = {
   });
 })();
 
-/* ============ SKILLS HEX GRID ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 07 · GRID HEXAGONAL DE HABILIDADES
+   Genera dinámicamente los hex tiles de lenguajes, herramientas de
+   seguridad, plataformas y entorno dev. El nivel (1-5) se renderiza
+   como puntos <i> — on/off según el índice vs item.n.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   // lvl: 1-5 proficiency dots
   const langs = [
@@ -492,7 +549,12 @@ const PROJECT_REPOS = {
   make(devp,  'hex-dev');
 })();
 
-/* ============ TILT ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 08 · TILT 3D — perspectiva en tarjetas
+   VanillaTilt en elementos .tilt: máx 8° de inclinación con glare
+   sutil (opacidad 0.15) para simular profundidad sin marear.
+   Se inicializa en 'load' para que las imágenes ya tengan tamaño.
+   ══════════════════════════════════════════════════════════════════ */
 window.addEventListener('load', () => {
   if (window.VanillaTilt) {
     VanillaTilt.init(document.querySelectorAll('.tilt'), {
@@ -501,7 +563,14 @@ window.addEventListener('load', () => {
   }
 });
 
-/* ============ CONTACT — COPY TO CLIPBOARD ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 09 · CONTACTO — portapapeles y descarga de CV
+   showToast() es un singleton de notificación reutilizado por todos
+   los botones de copia y la descarga del CV.
+   copyText() usa Clipboard API con fallback a execCommand (Safari<13).
+   La descarga del CV hace fetch a uploads/cv.pdf y crea un blob URL
+   temporal para forzar el diálogo de descarga del navegador.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const toast = document.getElementById('copyToast');
   let toastTimer;
@@ -556,9 +625,9 @@ window.addEventListener('load', () => {
   // silently gets blocked.
   const dl = document.getElementById('downloadCv');
   if (dl) {
-    // PDF is embedded in this file as base64 (script#cvData) so the download
-    // works even when the HTML is saved & opened as a stand-alone file
-    // (file:// without an uploads/ folder next to it).
+    // Intenta leer el blob desde un elemento #cvData en el DOM.
+    // En la versión modularizada ese elemento ya no existe, así que
+    // devuelve null y el click handler cae directamente en el fetch().
     const buildCvBlob = () => {
       const node = document.getElementById('cvData');
       if (!node) return null;
@@ -601,7 +670,11 @@ window.addEventListener('load', () => {
     });
   }
 
-  /* ============ COMMS CARDS — copy buttons ============ */
+  /* ══════════════════════════════════════════════════════════════════
+     § 10 · TARJETAS DE COMUNICACIÓN — botones de copia
+     Feedback visual en dos capas: cambio de icono/label en el botón
+     + toast global. showToast() ya está en el scope del closure padre.
+     ══════════════════════════════════════════════════════════════════ */
   document.querySelectorAll('.comms-card [data-copy]').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       e.preventDefault();
@@ -629,7 +702,12 @@ window.addEventListener('load', () => {
   });
 })();
 
-/* ============ REVEAL ON SCROLL ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 11 · REVEAL ON SCROLL — secciones
+   IntersectionObserver añade .in a cada <section> cuando cruza el
+   12% del viewport. El CSS aplica la transición de entrada con
+   translate + opacity. Se desconecta (unobserve) tras la primera vez.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const els = document.querySelectorAll('section');
   const io = new IntersectionObserver((entries) => {
@@ -640,7 +718,11 @@ window.addEventListener('load', () => {
   els.forEach(el => { el.classList.add('reveal'); io.observe(el); });
 })();
 
-/* ============ SIDE PROGRESS ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 12 · PROGRESO LATERAL — dots de navegación
+   Resalta el punto activo en base a qué sección tiene su offsetTop
+   más cercano al 35% del viewport. Scroll suave al hacer click.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const steps = document.querySelectorAll('.side-progress .step');
   steps.forEach(s => {
@@ -660,7 +742,15 @@ window.addEventListener('load', () => {
   updateActive();
 })();
 
-/* ============ FLOATING BUBBLES + BURST ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 13 · BURBUJAS FLOTANTES — canvas de fondo
+   Esferas translúcidas con contenido de ciberseguridad (términos,
+   IPs, hashes hex, CVEs, puertos, emojis) que flotan hacia arriba
+   y explotan en partículas al colisionar con el cursor o el toque.
+   Iluminación por "sol virtual" (arriba-derecha): highlight especular,
+   rim iridiscente girado, Fresnel backlit y sombra volumétrica.
+   Distribución de contenido: 40% términos · 30% código · 20% emoji · 10% binario.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const canvas = document.getElementById('bubbles');
   const ctx = canvas.getContext('2d');
@@ -966,7 +1056,15 @@ window.addEventListener('load', () => {
   draw();
 })();
 
-/* ============ THREE.JS NETWORK GLOBE ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 14 · GLOBO DE RED — Three.js
+   Wireframe esférico con 36 nodos (12% en alerta roja), conexiones
+   entre nodos próximos (<1.4u), dos anillos orbitales, satélites
+   con trail, scan beam vertical y arcos de datos tipo great-circle.
+   Los arcos y flares se descartan con .dispose() al expirar para
+   evitar fugas de memoria en la GPU. Envuelto en try/catch para que
+   un error de WebGL no rompa el resto del portfolio.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   try {
   if (!window.THREE) { console.warn('[GLOBE] no THREE'); return; }
@@ -1277,7 +1375,10 @@ window.addEventListener('load', () => {
   } catch(e) { console.error('[GLOBE] init failed:', e.message, e.stack); }
 })();
 
-/* ============ STATUS CYCLER ============ */
+/* ══════════════════════════════════════════════════════════════════
+   § 15 · STATUS CYCLER — indicador de disponibilidad
+   Rota mensajes de estado en el footer cada 3.2 s.
+   ══════════════════════════════════════════════════════════════════ */
 (() => {
   const el = document.getElementById('statusText');
   if (!el) return;
