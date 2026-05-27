@@ -15,10 +15,10 @@
 
 # IVÁN BATISTA
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-ONLINE-00ffcc?style=flat-square&labelColor=0a0a0f)](https://ivanbatista.pages.dev)
-[![Email](https://img.shields.io/badge/EMAIL-ivanbatistah%40gmail.com-00ffcc?style=flat-square&labelColor=0a0a0f&logo=gmail&logoColor=00ffcc)](mailto:ivanbatistah@gmail.com?subject=Vacante%20SOC%20L1)
-[![GitHub](https://img.shields.io/badge/GITHUB-1van106-00ffcc?style=flat-square&labelColor=0a0a0f&logo=github&logoColor=00ffcc)](https://github.com/1van106)
-[![Status](https://img.shields.io/badge/ESTADO-BUSCANDO_SOC_L1-ff003c?style=flat-square&labelColor=0a0a0f)](mailto:ivanbatistah@gmail.com)
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-ONLINE-1affe4?style=for-the-badge&labelColor=111111)](https://ivanbatista.pages.dev)
+[![Email](https://img.shields.io/badge/EMAIL-ivanbatistah%40gmail.com-1affe4?style=for-the-badge&labelColor=111111)](mailto:ivanbatistah@gmail.com?subject=Vacante%20SOC%20L1)
+[![GitHub](https://img.shields.io/badge/GITHUB-1van106-1affe4?style=for-the-badge&labelColor=111111&logo=github&logoColor=white)](https://github.com/1van106)
+[![Status](https://img.shields.io/badge/ESTADO-BUSCANDO_SOC_L1-e63946?style=for-the-badge&labelColor=111111)](mailto:ivanbatistah@gmail.com)
 
 </div>
 
@@ -154,8 +154,8 @@ ivan@shell:~$ ./contacto.sh
                    L-V 09–19h · llamada o WhatsApp
 ```
 
-> ¿Buscas un analista SOC junior? **Aquí me tienes.**
-> Cualquier canal vale — correo, teléfono o LinkedIn.
+**¿Buscas un analista SOC junior? Aquí me tienes.**
+Cualquier canal vale — correo, teléfono o LinkedIn.
 
 ---
 
@@ -172,9 +172,11 @@ Portfolio/
     └── cv.pdf        ← currículum descargable
 ```
 
-Construido con **Three.js**, **GSAP + ScrollTrigger** y **VanillaTilt**.
-Tipografía: **JetBrains Mono** · **Space Grotesk**.
-Desplegado automáticamente en **Cloudflare Pages** con cada push a `main`.
+```bash
+# stack frontend: Three.js · GSAP + ScrollTrigger · VanillaTilt
+# tipografía:     JetBrains Mono · Space Grotesk
+# deploy:         Cloudflare Pages → auto en cada push a main
+```
 
 ---
 
