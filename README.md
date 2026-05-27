@@ -18,7 +18,7 @@
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-ONLINE-1affe4?style=for-the-badge&labelColor=111111)](https://ivanbatista.pages.dev)
 [![Email](https://img.shields.io/badge/EMAIL-ivanbatistah%40gmail.com-1affe4?style=for-the-badge&labelColor=111111)](mailto:ivanbatistah@gmail.com?subject=Vacante%20SOC%20L1)
 [![GitHub](https://img.shields.io/badge/GITHUB-1van106-1affe4?style=for-the-badge&labelColor=111111&logo=github&logoColor=white)](https://github.com/1van106)
-[![Status](https://img.shields.io/badge/ESTADO-BUSCANDO_SOC_L1-e63946?style=for-the-badge&labelColor=111111)](mailto:ivanbatistah@gmail.com)
+[![Status](https://img.shields.io/badge/OPEN_TO_WORK-Cybersecurity_Analyst_%26_Full_Stack_Dev-e63946?style=for-the-badge&labelColor=111111)](mailto:ivanbatistah@gmail.com)
 
 </div>
 
