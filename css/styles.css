@@ -457,6 +457,9 @@
     font-family: var(--mono); color: var(--text);
     font-size: 15px; line-height: 1.75;
     margin-bottom: 18px;
+    text-align: justify;
+    hyphens: none;
+    -webkit-hyphens: none;
     /* normal block: respects parent column width and word-wrap */
     overflow-wrap: break-word;
   }
