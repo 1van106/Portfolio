@@ -1951,7 +1951,7 @@
       min-height: auto;
     }
     .hero-title { font-size: clamp(40px, 13vw, 72px); }
-    .hero-sub { font-size: 13px; padding-left: 12px; }
+    .hero-sub { font-size: 13px; }
     .hero-right { max-width: 320px; justify-self: center; width: 100%; }
     .hero-meta { gap: 14px 22px; margin-top: 28px; }
     .hero-meta > div { flex: 1 1 calc(50% - 22px); min-width: 110px; }
