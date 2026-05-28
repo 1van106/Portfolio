@@ -88,18 +88,19 @@ Servicio **WebSocket** que consume datos en formato JSON desde una base de datos
 </details>
 
 <details>
-<summary><code>DESPLEGADO</code> &nbsp; <strong>03.03 · PORTFOLIO · ivanbatista.pages.dev</strong> · JavaScript · Proyecto personal</summary>
+<summary><code>DESPLEGADO</code> &nbsp; <strong>03.03 · PORTFOLIO PERSONAL</strong> · HTML · CSS · JavaScript · Proyecto personal</summary>
 
 ```
-ivanbatista.pages.dev
-stack   →  Three.js · GSAP · VanillaTilt
-css     →  3 200+ líneas · terminal design
-deploy  →  git push → Cloudflare Pages
+dominio   →  ivanbatista.dev  (Squarespace)
+dns       →  Cloudflare
+deploy    →  git push → Cloudflare Pages  CI/CD
+stack     →  Three.js · GSAP · VanillaTilt
+css       →  3 200+ líneas · responsive
 ```
 
-Portfolio personal con estética terminal. Globo 3D interactivo con **Three.js**, animaciones de scroll con **GSAP + ScrollTrigger** y efecto de profundidad en tarjetas con **VanillaTilt**. Desplegado en **Cloudflare Pages** con CI/CD automático en cada push a main.
+Portfolio con estética terminal escrito en **HTML5**, **CSS3** y **JavaScript** vanilla. CSS de más de 3 200 líneas con variables, animaciones y diseño responsive. JS con **Three.js** (globo 3D interactivo), **GSAP + ScrollTrigger** (animaciones de scroll) y **VanillaTilt** (profundidad en tarjetas). Dominio propio comprado en **Squarespace**, DNS gestionado en **Cloudflare** y desplegado en **Cloudflare Pages** con CI/CD automático en cada push a main.
 
-![HTML5](https://img.shields.io/badge/HTML5-111111?style=flat-square&logo=html5&logoColor=E34F26) ![CSS3](https://img.shields.io/badge/CSS3-111111?style=flat-square&logo=css3&logoColor=1572B6) ![JavaScript](https://img.shields.io/badge/JavaScript-111111?style=flat-square&logo=javascript&logoColor=F7DF1E) ![Three.js](https://img.shields.io/badge/Three.js-111111?style=flat-square&logo=threedotjs&logoColor=white) ![GSAP](https://img.shields.io/badge/GSAP-111111?style=flat-square) ![Cloudflare](https://img.shields.io/badge/Cloudflare_Pages-111111?style=flat-square&logo=cloudflare&logoColor=F6821F) &nbsp; *2025 · Proyecto personal*
+![HTML5](https://img.shields.io/badge/HTML5-111111?style=flat-square&logo=html5&logoColor=E34F26) ![CSS3](https://img.shields.io/badge/CSS3-111111?style=flat-square&logo=css3&logoColor=1572B6) ![JavaScript](https://img.shields.io/badge/JavaScript-111111?style=flat-square&logo=javascript&logoColor=F7DF1E) ![Three.js](https://img.shields.io/badge/Three.js-111111?style=flat-square&logo=threedotjs&logoColor=white) ![GSAP](https://img.shields.io/badge/GSAP-111111?style=flat-square) ![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-111111?style=flat-square&logo=cloudflare&logoColor=F6821F) ![Squarespace](https://img.shields.io/badge/Squarespace_DNS-111111?style=flat-square&logo=squarespace&logoColor=white) &nbsp; *2025 · Proyecto personal*
 
 </details>
 
