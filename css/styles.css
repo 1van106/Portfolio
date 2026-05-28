@@ -1107,9 +1107,12 @@
     transform: translateZ(25px);
   }
   .proj-card .blurb {
-    font-family: var(--mono); font-size: 13px; line-height: 1.65; color: var(--dim);
+    font-family: var(--sans); font-size: 13px; line-height: 1.65; color: var(--dim);
     margin: 0 0 18px;
     transform: translateZ(15px);
+    text-align: justify;
+    hyphens: none;
+    -webkit-hyphens: none;
   }
   .proj-card .ascii {
     font-family: var(--mono); font-size: 10px; line-height: 1.2; color: var(--soft);
