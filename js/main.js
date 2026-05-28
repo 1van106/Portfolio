@@ -26,10 +26,10 @@
    Rellena o deja vacío ("") para activar o desactivar el badge.
    ══════════════════════════════════════════════════════════════════ */
 const PROJECT_REPOS = {
-  cronometro: "https://github.com/1van106",   // 03.01 · CRONÓMETRO DE PLENOS
-  websocket:  "https://github.com/1van106",   // 03.02 · WEBSOCKET POLICÍA LOCAL
-  android:    "https://github.com/1van106",   // 03.03 · APP ANDROID · PATRULLA
-  soclab:     "https://github.com/1van106"    // 03.04 · SOC LAB · WAZUH + ELK
+  cronometro: "https://github.com/1van106/CronometoAytoEspartinas",  // 03.01 · CRONÓMETRO DE PLENOS
+  websocket:  "https://github.com/1van106",                          // 03.02 · WEBSOCKET POLICÍA LOCAL
+  portfolio:  "https://github.com/1van106/Portfolio",                // 03.03 · PORTFOLIO
+  soclab:     "https://github.com/1van106"                           // 03.04 · ZERO TRUST ARCHITECTURE
 };
 
 /* ══════════════════════════════════════════════════════════════════
