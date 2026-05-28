@@ -396,18 +396,25 @@
         <span class="corner-dot bl"></span><span class="corner-dot br"></span>
         <div class="proj-meta">
           <span class="id">// 03.04 · 2025–2026</span>
-          <span class="status-pill"><span class="dot"></span>HOME LAB</span>
+          <span class="status-pill"><span class="dot"></span>TFM</span>
         </div>
-        <h3>SOC LAB · WAZUH + ELK</h3>
-        <div class="org">Máster Ciberseguridad EUSA · home lab</div>
-        <p class="blurb">Laboratorio personal con Wazuh (SIEM/HIDS/FIM), pila ELK y Snort IDS sobre Docker. Bastionado Linux con CIS Benchmarks, fail2ban, nftables y políticas Zero Trust con Keycloak + Vault + Nginx.</p>
+        <h3>ZERO TRUST ARCHITECTURE · TFM</h3>
+        <div class="org">Máster Ciberseguridad · EUSA &mdash; Universidad de Sevilla</div>
+        <p class="blurb">Diseño e implantación de una arquitectura Zero Trust sobre laboratorio de 4 VMs interconectadas por túnel WireGuard. Nginx como PEP con oauth2-proxy, autenticación JWT+TOTP vía Keycloak y gestión de secretos con HashiCorp Vault. Simulación de 5 escenarios de ataque reales: tasa de detección 80 % (Wazuh 4.14.5 + Snort 2).</p>
         <div class="badges">
-          <span class="badge">Wazuh</span><span class="badge">ELK</span><span class="badge">Snort</span><span class="badge">Docker</span><span class="badge">Zero Trust</span>
+          <span class="badge">Wazuh</span><span class="badge">Keycloak</span><span class="badge">Vault</span><span class="badge">Nginx</span><span class="badge">Snort</span><span class="badge">Docker</span><span class="badge">WireGuard</span>
         </div>
-<pre class="ascii">agents online      4 / 4    ✓
-rules loaded     2,184      ✓
-alerts (24h)        37   (12 high · 25 low)
-last incident   ssh brute-force  →  fail2ban OK</pre>
+<pre class="ascii">Zero Trust flow:
+  Firefox → Nginx PEP → oauth2-proxy → Keycloak (JWT+TOTP) → webapp
+
+Attack simulation  (10/05/2026 · 4 VMs · WireGuard lab)
+  Hydra SSH         → fail2ban block  8 attempts  ~10 s   ✓
+  Keycloak BF       → blocked         5 attempts   &lt;1 s   ✓
+  Nmap recon        → Snort [1:469]               &lt;1 s   ✓
+  LinPEAS (FIM)     → Wazuh /tmp      detected    &lt;2 s   ✓
+  Data exfiltration → egress gap               NOT DET   ✗
+
+Detection 80 %  ·  Wazuh 4.14.5  ·  3 agents active</pre>
       </article>
 
     </div>

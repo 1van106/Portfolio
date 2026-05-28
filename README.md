@@ -103,19 +103,25 @@ App móvil en **Kotlin** que se conecta al servicio WebSocket para visualizar in
 </details>
 
 <details>
-<summary><code>HOME LAB</code> &nbsp; <strong>03.04 · SOC LAB · WAZUH + ELK</strong> · Ciberseguridad · Máster EUSA</summary>
+<summary><code>TFM</code> &nbsp; <strong>03.04 · ZERO TRUST ARCHITECTURE</strong> · Ciberseguridad · Máster EUSA</summary>
 
 ```
-agents online      4 / 4    ✓
-rules loaded     2,184      ✓
-alerts (24h)        37   (12 high · 25 low)
-last incident   ssh brute-force  →  fail2ban OK
+Zero Trust flow:
+  Firefox → Nginx PEP → oauth2-proxy → Keycloak (JWT+TOTP) → webapp
+
+Attack simulation  (10/05/2026 · 4 VMs · WireGuard lab)
+  Hydra SSH         → fail2ban block  8 attempts  ~10 s   ✓
+  Keycloak BF       → blocked         5 attempts   <1 s   ✓
+  Nmap recon        → Snort [1:469]               <1 s   ✓
+  LinPEAS (FIM)     → Wazuh /tmp      detected    <2 s   ✓
+  Data exfiltration → egress gap               NOT DET   ✗
+
+Detection 80 %  ·  Wazuh 4.14.5  ·  3 agents active
 ```
 
-Laboratorio personal con **Wazuh** (SIEM/HIDS/FIM), pila **ELK** y **Snort** IDS sobre Docker.
-Bastionado Linux con CIS Benchmarks, fail2ban, nftables y políticas Zero Trust con Keycloak + Vault + Nginx.
+Diseño e implantación de una arquitectura **Zero Trust** sobre laboratorio de 4 VMs interconectadas por túnel **WireGuard** (2 máquinas físicas). **Nginx** como PEP con oauth2-proxy, autenticación JWT+TOTP vía **Keycloak** y gestión de secretos con **HashiCorp Vault**. Simulación de 5 escenarios de ataque reales con tasa de detección del 80 %.
 
-![Wazuh](https://img.shields.io/badge/Wazuh-111111?style=flat-square) ![ELK Stack](https://img.shields.io/badge/ELK_Stack-111111?style=flat-square&logo=elasticsearch&logoColor=00BFB3) ![Snort](https://img.shields.io/badge/Snort-111111?style=flat-square) ![Docker](https://img.shields.io/badge/Docker-111111?style=flat-square&logo=docker&logoColor=2496ED) ![Zero Trust](https://img.shields.io/badge/Zero_Trust-111111?style=flat-square) &nbsp; *2025–2026 · Máster Ciberseguridad EUSA*
+![Wazuh](https://img.shields.io/badge/Wazuh-111111?style=flat-square) ![Keycloak](https://img.shields.io/badge/Keycloak-111111?style=flat-square) ![Vault](https://img.shields.io/badge/Vault-111111?style=flat-square&logo=vault&logoColor=FFEC6E) ![Nginx](https://img.shields.io/badge/Nginx-111111?style=flat-square&logo=nginx&logoColor=009639) ![Snort](https://img.shields.io/badge/Snort-111111?style=flat-square) ![Docker](https://img.shields.io/badge/Docker-111111?style=flat-square&logo=docker&logoColor=2496ED) ![WireGuard](https://img.shields.io/badge/WireGuard-111111?style=flat-square&logo=wireguard&logoColor=88171A) &nbsp; *2025–2026 · TFM Máster Ciberseguridad EUSA*
 
 </details>
 
