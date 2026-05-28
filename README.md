@@ -52,7 +52,7 @@ ivan@shell:~$ cat perfil.txt
 ## `03 //` PROYECTOS
 
 <details>
-<summary><code>EN PRODUCCIÓN</code> &nbsp; <strong>03.01 · CRONÓMETRO DE PLENOS</strong> · Python · Ayuntamiento de Espartinas</summary>
+<summary><code>ENTREGADO</code> &nbsp; <strong>03.01 · CRONÓMETRO DE PLENOS</strong> · Python · Ayuntamiento de Espartinas</summary>
 
 ```
 pleno ordinario · Ayto. Espartinas
