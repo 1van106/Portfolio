@@ -2077,10 +2077,10 @@
     position: relative;
     width: 100%;
     display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
+    align-items: flex-end; justify-content: center;
     gap: 22px;
     min-height: 380px;
-    padding: 220px 0 20px;  /* push puck down so it sits around the vertical
+    padding: 220px clamp(20px, 6vw, 80px) 20px 0;  /* push puck down so it sits around the vertical
                                 midpoint of the about-text column */
   }
 
