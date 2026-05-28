@@ -1,5 +1,5 @@
 <!-- ████████████████████████████████████████████████████████████
-     README.md — Portfolio · Iván Batista · github.com/1van106
+     README.md — Portfolio · Iván Batista Herrero · github.com/1van106
      ████████████████████████████████████████████████████████████ -->
 
 <div align="center">
@@ -13,7 +13,7 @@
 ╚══════════════════════════════════════════════════════════╝
 ```
 
-# IVÁN BATISTA
+# IVÁN BATISTA HERRERO
 
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-ONLINE-1affe4?style=for-the-badge&labelColor=111111)](https://ivanbatista.pages.dev)
 [![Email](https://img.shields.io/badge/EMAIL-ivanbatistah%40gmail.com-1affe4?style=for-the-badge&labelColor=111111)](mailto:ivanbatistah@gmail.com?subject=Vacante%20SOC%20L1)
