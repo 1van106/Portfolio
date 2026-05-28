@@ -338,15 +338,18 @@
         </div>
         <h3>CRONÓMETRO DE PLENOS</h3>
         <div class="org">Ayuntamiento de Espartinas · prácticas DAM</div>
-        <p class="blurb">Aplicación en Python para controlar los tiempos de intervención de los ediles durante los plenos municipales. Cronómetros independientes por grupo, avisos visuales y registro automático de turnos.</p>
+        <p class="blurb">Aplicación de escritorio en Python con arquitectura MVC (PyQt6) para gestionar los tiempos de intervención en plenos municipales. Doble ventana: visualización en pantalla completa para proyector y panel de control del operador. Cronómetros por grupo político con logos, cuenta atrás con alarma sonora, paso automático a tiempo excedido, sincronización en cascada entre turnos y atajos de teclado. Configuración persistente en JSON para plenos ordinarios y extraordinarios.</p>
         <div class="badges">
-          <span class="badge">Python</span><span class="badge">UI</span><span class="badge">Tiempo real</span>
+          <span class="badge">Python</span><span class="badge">PyQt6</span><span class="badge">pygame</span><span class="badge">MVC</span><span class="badge">JSON</span>
         </div>
-<pre class="ascii">┌─[ pleno · 25.04.2025 ]──────────┐
-│ GRUPO A   05:42 / 07:00  ▓▓▓▓▓░ │
-│ GRUPO B   02:11 / 05:00  ▓▓▒░░░ │
-│ ALCALDÍA  ─:──            idle  │
-└─────────────────────────────────┘</pre>
+<pre class="ascii">pleno ordinario · Ayto. Espartinas
+┌─────────────────────────────────────┐
+│ PSOE    05:42  ▓▓▓▓▓░  en curso    │
+│ PP      02:11  ▓▓▒░░░  en curso    │
+│ VOX     00:00  ██████  EXCEDIDO    │
+│ POR_A   04:00  ░░░░░░  en espera   │
+└─────────────────────────────────────┘
+[viz] pantalla completa · [ctrl] operador</pre>
       </article>
 
       <article class="proj-card tilt" data-repo-key="websocket" tabindex="0" role="link">

@@ -55,17 +55,19 @@ ivan@shell:~$ cat perfil.txt
 <summary><code>EN PRODUCCIÓN</code> &nbsp; <strong>03.01 · CRONÓMETRO DE PLENOS</strong> · Python · Ayuntamiento de Espartinas</summary>
 
 ```
-┌─[ pleno · 25.04.2025 ]──────────────────────┐
-│ GRUPO A    05:42 / 07:00   ▓▓▓▓▓░  en curso │
-│ GRUPO B    02:11 / 05:00   ▓▓▒░░░  en curso │
-│ ALCALDÍA   ─:──              idle            │
-└─────────────────────────────────────────────┘
+pleno ordinario · Ayto. Espartinas
+┌─────────────────────────────────────┐
+│ PSOE    05:42  ▓▓▓▓▓░  en curso    │
+│ PP      02:11  ▓▓▒░░░  en curso    │
+│ VOX     00:00  ██████  EXCEDIDO    │
+│ POR_A   04:00  ░░░░░░  en espera   │
+└─────────────────────────────────────┘
+[viz] pantalla completa · [ctrl] operador
 ```
 
-Aplicación en **Python** para controlar los tiempos de intervención de los ediles durante los plenos municipales.
-Cronómetros independientes por grupo político, avisos visuales y registro automático de turnos.
+Aplicación de escritorio en **Python** con arquitectura **MVC** (**PyQt6**) para gestionar los tiempos de intervención en plenos municipales. Doble ventana: visualización en pantalla completa para proyector y panel de control del operador. Cronómetros por grupo político (PSOE, PP, VOX, POR_A) con logos, cuenta atrás con alarma sonora (**pygame**), paso automático a tiempo excedido, sincronización en cascada entre turnos y atajos de teclado (1–9 toggle, Ctrl+1–9 reset). Configuración persistente en JSON para plenos ordinarios y extraordinarios.
 
-![Python](https://img.shields.io/badge/Python-111111?style=flat-square&logo=python&logoColor=3776AB) ![UI](https://img.shields.io/badge/UI-111111?style=flat-square) ![Tiempo real](https://img.shields.io/badge/Tiempo_real-111111?style=flat-square) &nbsp; *mar–jun 2025 · prácticas DAM*
+![Python](https://img.shields.io/badge/Python-111111?style=flat-square&logo=python&logoColor=3776AB) ![PyQt6](https://img.shields.io/badge/PyQt6-111111?style=flat-square&logo=qt&logoColor=41CD52) ![pygame](https://img.shields.io/badge/pygame-111111?style=flat-square) ![MVC](https://img.shields.io/badge/MVC-111111?style=flat-square) ![JSON](https://img.shields.io/badge/JSON-111111?style=flat-square) &nbsp; *mar–jun 2025 · prácticas DAM*
 
 </details>
 
