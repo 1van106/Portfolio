@@ -751,6 +751,7 @@ window.addEventListener('load', () => {
    rim iridiscente girado, Fresnel backlit y sombra volumétrica.
    Distribución de contenido: 40% términos · 30% código · 20% emoji · 10% binario.
    ══════════════════════════════════════════════════════════════════ */
+/* BUBBLES DISABLED — descomentar para reactivar
 (() => {
   const canvas = document.getElementById('bubbles');
   const ctx = canvas.getContext('2d');
@@ -1055,6 +1056,7 @@ window.addEventListener('load', () => {
   }
   draw();
 })();
+*/
 
 /* ══════════════════════════════════════════════════════════════════
    § 14 · GLOBO DE RED — Three.js
