@@ -352,24 +352,54 @@
 [viz] pantalla completa · [ctrl] operador</pre>
       </article>
 
-      <article class="proj-card tilt" data-repo-key="websocket" tabindex="0" role="link">
+      <article class="proj-card tilt" data-repo-key="frichat_front" tabindex="0" role="link">
         <span class="scan"></span>
         <span class="corner-dot tl"></span><span class="corner-dot tr"></span>
         <span class="corner-dot bl"></span><span class="corner-dot br"></span>
         <div class="proj-meta">
-          <span class="id">// 03.02 · mar–jun 2025</span>
-          <span class="status-pill"><span class="dot"></span>DESPLEGADO</span>
+          <span class="id">// 03.02 · 2024–2025</span>
+          <span class="status-pill"><span class="dot"></span>TFG</span>
         </div>
-        <h3>WEBSOCKET POLICÍA LOCAL</h3>
-        <div class="org">Ayuntamiento de Espartinas · prácticas DAM</div>
-        <p class="blurb">Servicio WebSocket que consume datos en formato JSON desde una base de datos de la Policía Local y los reenvía a clientes autorizados en tiempo real. Reconexión automática, autenticación por token.</p>
+        <h3>FRICHAT · FRONTEND</h3>
+        <div class="org">TFG DAM · IES El Majuelo</div>
+        <p class="blurb">Frontend de una aplicación de mensajería en tiempo real inspirada en Discord, desarrollada como TFG del grado DAM. SPA sin router: máquina de estados con useState en App. Componentes separados por dominio (Auth, InterfazChat) con lógica de red encapsulada en custom hooks. Chat en tiempo real con WebSocket nativo del navegador. Diseño tipo Discord: sidebar de contactos, área de chat y barra de usuario con cierre de sesión.</p>
         <div class="badges">
-          <span class="badge">Python</span><span class="badge">WebSocket</span><span class="badge">JSON</span><span class="badge">SQL</span>
+          <span class="badge">React 19</span><span class="badge">Vite</span><span class="badge">JSX</span><span class="badge">WebSocket</span><span class="badge">Custom Hooks</span>
         </div>
-<pre class="ascii">[ws] 192.168.1.14  ▸  CONNECTED   token=ok
-[ws] poll BD       ▸  3 new events fetched
-[ws] broadcast     ▸  2 clients · 412 B
-[ws] heartbeat     ▸  rtt 14ms · stable</pre>
+<pre class="ascii">App
++-- Auth/
+|   +-- FormularioAuth  &lt;-- base reutilizable
+|   +-- Login           &lt;-- hook: useLogin
+|   +-- Register        &lt;-- hook: useRegister
++-- InterfazChat/
+    +-- Menu            &lt;-- barra superior · logout
+    +-- Contactos       &lt;-- lista + agregar contactos
+    +-- Chat            &lt;-- WebSocket nativo · RT</pre>
+      </article>
+
+      <article class="proj-card tilt" data-repo-key="frichat_back" tabindex="0" role="link">
+        <span class="scan"></span>
+        <span class="corner-dot tl"></span><span class="corner-dot tr"></span>
+        <span class="corner-dot bl"></span><span class="corner-dot br"></span>
+        <div class="proj-meta">
+          <span class="id">// 03.03 · 2024–2025</span>
+          <span class="status-pill"><span class="dot"></span>TFG</span>
+        </div>
+        <h3>FRICHAT · BACKEND</h3>
+        <div class="org">TFG DAM · IES El Majuelo</div>
+        <p class="blurb">API REST y servidor WebSocket para Frichat. FastAPI sobre MySQL con SQLAlchemy ORM. Registro con hash bcrypt, autenticación por correo y contraseña, gestión de contactos bidireccional con deduplicación por IDs ordenados. Enrutamiento de mensajes en tiempo real: el servidor mantiene un dict de conexiones activas y reenvía el JSON al destinatario si está conectado.</p>
+        <div class="badges">
+          <span class="badge">Python</span><span class="badge">FastAPI</span><span class="badge">SQLAlchemy</span><span class="badge">MySQL</span><span class="badge">WebSocket</span><span class="badge">bcrypt</span>
+        </div>
+<pre class="ascii">FastAPI
++-- /registro/   POST  --&gt;  bcrypt hash + INSERT
++-- /login/      POST  --&gt;  bcrypt.verify
++-- /contactos/  POST  --&gt;  listar por usuario
++-- /agregar/    POST  --&gt;  sorted(id1,id2)  dedup
++-- /ws/{nombre} WS    --&gt;  routing RT en memoria
+
+MySQL: usuarios(id, nombre, correo, hash, admin)
+       contactos(id1 FK, id2 FK) clave compuesta</pre>
       </article>
 
       <article class="proj-card tilt" data-repo-key="portfolio" tabindex="0" role="link">
@@ -377,7 +407,7 @@
         <span class="corner-dot tl"></span><span class="corner-dot tr"></span>
         <span class="corner-dot bl"></span><span class="corner-dot br"></span>
         <div class="proj-meta">
-          <span class="id">// 03.03 · 2025</span>
+          <span class="id">// 03.04 · 2025</span>
           <span class="status-pill"><span class="dot"></span>DESPLEGADO</span>
         </div>
         <h3>PORTFOLIO PERSONAL</h3>
@@ -398,7 +428,7 @@ css       →  3 200+ líneas · responsive</pre>
         <span class="corner-dot tl"></span><span class="corner-dot tr"></span>
         <span class="corner-dot bl"></span><span class="corner-dot br"></span>
         <div class="proj-meta">
-          <span class="id">// 03.04 · 2025–2026</span>
+          <span class="id">// 03.05 · 2025–2026</span>
           <span class="status-pill"><span class="dot"></span>TFM</span>
         </div>
         <h3>ZERO TRUST ARCHITECTURE · TFM</h3>

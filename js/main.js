@@ -26,10 +26,11 @@
    Rellena o deja vacío ("") para activar o desactivar el badge.
    ══════════════════════════════════════════════════════════════════ */
 const PROJECT_REPOS = {
-  cronometro: "https://github.com/1van106/CronometoAytoEspartinas",  // 03.01 · CRONÓMETRO DE PLENOS
-  websocket:  "https://github.com/1van106",                          // 03.02 · WEBSOCKET POLICÍA LOCAL
-  portfolio:  "https://github.com/1van106/Portfolio",                // 03.03 · PORTFOLIO
-  soclab:     "https://github.com/1van106"                           // 03.04 · ZERO TRUST ARCHITECTURE
+  cronometro:   "https://github.com/1van106/CronometoAytoEspartinas",  // 03.01 · CRONÓMETRO DE PLENOS
+  frichat_front: "https://github.com/1van106/Frichat_Frontend",         // 03.02 · FRICHAT FRONTEND
+  frichat_back:  "https://github.com/1van106/Frichat_Backend",          // 03.03 · FRICHAT BACKEND
+  portfolio:    "https://github.com/1van106/Portfolio",                 // 03.04 · PORTFOLIO
+  soclab:       "https://github.com/1van106"                            // 03.05 · ZERO TRUST ARCHITECTURE
 };
 
 /* ══════════════════════════════════════════════════════════════════

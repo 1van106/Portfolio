@@ -72,23 +72,49 @@ Aplicación de escritorio en **Python** con arquitectura **MVC** (**PyQt6**) par
 </details>
 
 <details>
-<summary><code>DESPLEGADO</code> &nbsp; <strong>03.02 · WEBSOCKET POLICÍA LOCAL</strong> · Python · Ayuntamiento de Espartinas</summary>
+<summary><code>TFG</code> &nbsp; <strong>03.02 · FRICHAT · FRONTEND</strong> · React · TFG DAM · IES El Majuelo</summary>
 
 ```
-[ws] 192.168.1.14  ▸  CONNECTED   token=ok
-[ws] poll BD       ▸  3 new events fetched
-[ws] broadcast     ▸  2 clients · 412 B
-[ws] heartbeat     ▸  rtt 14ms · stable
+App
++-- Auth/
+|   +-- FormularioAuth  <- base reutilizable
+|   +-- Login           <- hook: useLogin
+|   +-- Register        <- hook: useRegister
++-- InterfazChat/
+    +-- Menu            <- barra superior · logout
+    +-- Contactos       <- lista + agregar contactos
+    +-- Chat            <- WebSocket nativo · RT
 ```
 
-Servicio **WebSocket** que consume datos en formato JSON desde una base de datos de la Policía Local y los reenvía a clientes autorizados en tiempo real. Reconexión automática, autenticación por token.
+Frontend de una aplicación de mensajería en tiempo real inspirada en Discord. SPA sin router: máquina de estados con **useState** en App. Componentes separados por dominio (**Auth**, **InterfazChat**) con lógica de red encapsulada en custom hooks (*useLogin*, *useRegister*, *useFetchContacts*, *useAddContacts*). Chat en tiempo real con **WebSocket** nativo del navegador. Diseño tipo Discord: sidebar de contactos, área de chat y barra de usuario con cierre de sesión.
 
-![Python](https://img.shields.io/badge/Python-111111?style=flat-square&logo=python&logoColor=3776AB) ![WebSocket](https://img.shields.io/badge/WebSocket-111111?style=flat-square) ![JSON](https://img.shields.io/badge/JSON-111111?style=flat-square) ![SQL](https://img.shields.io/badge/SQL-111111?style=flat-square&logo=mysql&logoColor=4479A1) &nbsp; *mar–jun 2025 · prácticas DAM*
+![React](https://img.shields.io/badge/React_19-111111?style=flat-square&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-111111?style=flat-square&logo=vite&logoColor=646CFF) ![JavaScript](https://img.shields.io/badge/JavaScript-111111?style=flat-square&logo=javascript&logoColor=F7DF1E) ![WebSocket](https://img.shields.io/badge/WebSocket-111111?style=flat-square) &nbsp; *2024–2025 · TFG DAM*
 
 </details>
 
 <details>
-<summary><code>DESPLEGADO</code> &nbsp; <strong>03.03 · PORTFOLIO PERSONAL</strong> · HTML · CSS · JavaScript · Proyecto personal</summary>
+<summary><code>TFG</code> &nbsp; <strong>03.03 · FRICHAT · BACKEND</strong> · Python · FastAPI · TFG DAM · IES El Majuelo</summary>
+
+```
+FastAPI
++-- /registro/   POST  -->  bcrypt hash + INSERT
++-- /login/      POST  -->  bcrypt.verify
++-- /contactos/  POST  -->  listar por usuario
++-- /agregar/    POST  -->  sorted(id1,id2)  dedup
++-- /ws/{nombre} WS    -->  routing RT en memoria
+
+MySQL: usuarios(id, nombre, correo, hash, admin)
+       contactos(id1 FK, id2 FK) clave compuesta
+```
+
+API REST y servidor WebSocket para Frichat. **FastAPI** sobre **MySQL** con **SQLAlchemy** ORM. Registro con hash **bcrypt**, autenticación por correo y contraseña, gestión de contactos bidireccional con deduplicación por IDs ordenados. Enrutamiento de mensajes en tiempo real: el servidor mantiene un dict de conexiones activas y reenvía el JSON al destinatario si está conectado.
+
+![Python](https://img.shields.io/badge/Python-111111?style=flat-square&logo=python&logoColor=3776AB) ![FastAPI](https://img.shields.io/badge/FastAPI-111111?style=flat-square&logo=fastapi&logoColor=009688) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-111111?style=flat-square) ![MySQL](https://img.shields.io/badge/MySQL-111111?style=flat-square&logo=mysql&logoColor=4479A1) ![WebSocket](https://img.shields.io/badge/WebSocket-111111?style=flat-square) &nbsp; *2024–2025 · TFG DAM*
+
+</details>
+
+<details>
+<summary><code>DESPLEGADO</code> &nbsp; <strong>03.04 · PORTFOLIO PERSONAL</strong> · HTML · CSS · JavaScript · Proyecto personal</summary>
 
 ```
 dominio   →  ivanbatista.dev  (Squarespace)
@@ -105,7 +131,7 @@ Portfolio con estética terminal escrito en **HTML5**, **CSS3** y **JavaScript**
 </details>
 
 <details>
-<summary><code>TFM</code> &nbsp; <strong>03.04 · ZERO TRUST ARCHITECTURE</strong> · Ciberseguridad · Máster EUSA</summary>
+<summary><code>TFM</code> &nbsp; <strong>03.05 · ZERO TRUST ARCHITECTURE</strong> · Ciberseguridad · Máster EUSA</summary>
 
 ```
 Zero Trust flow:
