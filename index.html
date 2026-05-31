@@ -450,6 +450,31 @@ Attack simulation  (10/05/2026 · 4 VMs · WireGuard lab)
 Detection 80 %  ·  Wazuh 4.14.5  ·  3 agents active</pre>
       </article>
 
+      <article class="proj-card tilt" data-repo-key="ids" tabindex="0" role="link">
+        <span class="scan"></span>
+        <span class="corner-dot tl"></span><span class="corner-dot tr"></span>
+        <span class="corner-dot bl"></span><span class="corner-dot br"></span>
+        <div class="proj-meta">
+          <span class="id">// 03.06 · feb 2026</span>
+          <span class="status-pill"><span class="dot"></span>ENTREGADO</span>
+        </div>
+        <h3>LOGCLASSIFIER · IDS</h3>
+        <div class="org">Normativa de Ciberseguridad · Máster EUSA</div>
+        <p class="blurb">Sistema IDS basado en reglas inspirado en Fail2Ban. Pipeline de 5 módulos: ingesta de logs en tiempo real, motor de expresiones regulares que evalúa cada línea contra reglas YAML, correlación temporal con ventana deslizante por IP, módulo de respuesta (bloqueo real vía iptables o modo simulación) y sistema de alertas con registro en fichero. Extensible sin tocar código: añadir una nueva regla de detección es sólo escribir un fichero YAML.</p>
+        <div class="badges">
+          <span class="badge">Python</span><span class="badge">PyYAML</span><span class="badge">Docker</span><span class="badge">pytest</span><span class="badge">iptables</span><span class="badge">Regex</span>
+        </div>
+<pre class="ascii">log/*.log  -->  [Ingesta]  -->  [Motor Reglas]  -->  [Correlacion]
+                               (regex + YAML)     (ventana deslizante)
+                                                         |
+                                                  [Respuesta]
+                                             bloquear_ip | alertar
+                                             modo: real | simulacion
+                                                         |
+                                                  [Alertas]
+                                             consola + alertas.log</pre>
+      </article>
+
     </div>
   </section>
 

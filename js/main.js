@@ -30,7 +30,8 @@ const PROJECT_REPOS = {
   frichat_front: "https://github.com/1van106/Frichat_Frontend",         // 03.02 · FRICHAT FRONTEND
   frichat_back:  "https://github.com/1van106/Frichat_Backend",          // 03.03 · FRICHAT BACKEND
   portfolio:    "https://github.com/1van106/Portfolio",                 // 03.04 · PORTFOLIO
-  soclab:       "uploads/tfm_zero_trust.pdf"                           // 03.05 · ZERO TRUST ARCHITECTURE
+  soclab:       "uploads/tfm_zero_trust.pdf",                          // 03.05 · ZERO TRUST ARCHITECTURE
+  ids:          ""                                                     // 03.06 · LOGCLASSIFIER IDS
 };
 
 /* ══════════════════════════════════════════════════════════════════

@@ -153,6 +153,29 @@ Diseño e implantación de una arquitectura **Zero Trust** sobre laboratorio de 
 
 </details>
 
+<details>
+<summary><code>ENTREGADO</code> &nbsp; <strong>03.06 · LOGCLASSIFIER · IDS</strong> · Python · Normativa de Ciberseguridad · Máster EUSA</summary>
+
+```
+log/*.log  -->  [Ingesta]  -->  [Motor Reglas]  -->  [Correlacion]
+                               (regex + YAML)     (ventana deslizante)
+                                                         |
+                                                  [Respuesta]
+                                             bloquear_ip | alertar
+                                             modo: real | simulacion
+                                                         |
+                                                  [Alertas]
+                                             consola + alertas.log
+```
+
+Sistema **IDS basado en reglas** inspirado en Fail2Ban. Pipeline de 5 módulos: ingesta de logs en tiempo real, motor de expresiones regulares que evalúa cada línea contra reglas definidas en **YAML**, correlación temporal con ventana deslizante por IP (thread-safe), módulo de respuesta (bloqueo real vía **iptables** o modo simulación) y sistema de alertas con registro en fichero. Extensible sin tocar código: añadir una nueva regla de detección es sólo escribir un fichero YAML.
+
+Reglas incluidas: fuerza bruta SSH (`SSH_BRUTEFORCE`), usuario inválido SSH, login como root, escaneo web (404s) y fallo de autenticación web.
+
+![Python](https://img.shields.io/badge/Python-111111?style=flat-square&logo=python&logoColor=3776AB) ![PyYAML](https://img.shields.io/badge/PyYAML-111111?style=flat-square) ![Docker](https://img.shields.io/badge/Docker-111111?style=flat-square&logo=docker&logoColor=2496ED) ![pytest](https://img.shields.io/badge/pytest-111111?style=flat-square&logo=pytest&logoColor=0A9EDC) ![iptables](https://img.shields.io/badge/iptables-111111?style=flat-square) &nbsp; *feb 2026 · Normativa de Ciberseguridad · Máster EUSA*
+
+</details>
+
 ---
 
 ## `04 //` FORMACIÓN
