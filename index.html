@@ -484,12 +484,12 @@ Detection 80 %  ·  Wazuh 4.14.5  ·  3 agents active</pre>
           <span class="status-pill"><span class="dot"></span>ACTIVO</span>
         </div>
         <h3>PULPO · IDS/IPS MONITOR</h3>
-        <div class="org">Proyecto personal · herramienta complementaria al LogClassifier</div>
-        <p class="blurb">Aplicación de escritorio IDS/IPS construida con Electron + React + TypeScript. Monitoriza en tiempo real los eventos de seguridad generados por LogClassifier procesando logs en streaming con fs.watch. Clasifica alertas por tipo (BLOQUEO / ALERTA / REGISTRO) y severidad (CRITICA / ALTA / MEDIA / BAJA), persiste el historial entre sesiones con almacenamiento NDJSON y visualiza la actividad con gráficos de timeline, distribución por severidad y top de reglas. Empaquetado como AppImage para Linux e instalador NSIS para Windows.</p>
+        <div class="org">Proyecto personal · inspirado conceptualmente en LogClassifier</div>
+        <p class="blurb">Aplicación de escritorio IDS/IPS independiente construida con Electron + React + TypeScript. Incorpora su propio pipeline de detección procesando logs en streaming con fs.watch. Clasifica alertas por tipo (BLOQUEO / ALERTA / REGISTRO) y severidad (CRITICA / ALTA / MEDIA / BAJA), persiste el historial entre sesiones con almacenamiento NDJSON y visualiza la actividad con gráficos de timeline, distribución por severidad y top de reglas. Empaquetado como AppImage para Linux e instalador NSIS para Windows.</p>
         <div class="badges">
           <span class="badge">Electron</span><span class="badge">React</span><span class="badge">TypeScript</span><span class="badge">Recharts</span><span class="badge">electron-vite</span><span class="badge">Node.js</span>
         </div>
-<pre class="ascii">LogClassifier IDS → alertas.log → fs.watch (streaming)
+<pre class="ascii">Pipeline IDS → alertas.log → fs.watch (streaming)
                                         │
                               [Main Process · Node.js]
                               tryAppendAlert → NDJSON store
