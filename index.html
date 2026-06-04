@@ -485,19 +485,19 @@ Detection 80 %  ·  Wazuh 4.14.5  ·  3 agents active</pre>
         </div>
         <h3>PULPO · IDS/IPS MONITOR</h3>
         <div class="org">Proyecto personal · inspirado conceptualmente en LogClassifier</div>
-        <p class="blurb">Aplicación de escritorio IDS/IPS independiente construida con Electron + React + TypeScript. Incorpora su propio pipeline de detección procesando logs en streaming con fs.watch. Clasifica alertas por tipo (BLOQUEO / ALERTA / REGISTRO) y severidad (CRITICA / ALTA / MEDIA / BAJA), persiste el historial entre sesiones con almacenamiento NDJSON y visualiza la actividad con gráficos de timeline, distribución por severidad y top de reglas. Empaquetado como AppImage para Linux e instalador NSIS para Windows.</p>
+        <p class="blurb">Dashboard SOC construido con Electron + React sobre un backend FastAPI + SQLite. LogClassifier detecta ataques mediante 14 reglas YAML (SSH, SQLi, XSS, path traversal, command injection, HTTP flood, scanner UA…) y los persiste en base de datos. La API REST expone los datos al dashboard y un WebSocket emite cada alerta en tiempo real sin polling. El IDS arranca automáticamente como servicio systemd. El dashboard incluye filtros por tipo y severidad, gráficos de actividad, distribución por severidad y top de reglas con datos históricos completos de la BD.</p>
         <div class="badges">
-          <span class="badge">Electron</span><span class="badge">React</span><span class="badge">TypeScript</span><span class="badge">Recharts</span><span class="badge">electron-vite</span><span class="badge">Node.js</span>
+          <span class="badge">Electron</span><span class="badge">React</span><span class="badge">TypeScript</span><span class="badge">FastAPI</span><span class="badge">SQLite</span><span class="badge">WebSocket</span><span class="badge">Python</span><span class="badge">Recharts</span>
         </div>
-<pre class="ascii">Pipeline IDS → alertas.log → fs.watch (streaming)
-                                        │
-                              [Main Process · Node.js]
-                              tryAppendAlert → NDJSON store
-                              IPC: alert:new
-                                        │
-                              [Renderer · React]
-                              Timeline · Severity Donut · Top Rules
-                              Alert Feed · Blocked IPs · CSV Export</pre>
+<pre class="ascii">logs/*.log  →  [LogClassifier · 14 reglas YAML]  →  SQLite (pulpo.db)
+                  SSH · SQLi · XSS · Traversal              │
+                  CmdInject · Flood · ScannerUA        [FastAPI :8080]
+                                                       REST + WebSocket
+                                                             │
+                                                    [Dashboard · Electron]
+                                                    Filtros · Timeline
+                                                    Donut · Top Reglas
+                                                    Acknowledge · CSV</pre>
       </article>
 
     </div>
